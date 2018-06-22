@@ -9,11 +9,12 @@ Template.index.onRendered(function () {
             longitude:position.coords.longitude,
             latitude:position.coords.latitude
         };
-        Meteor.call('GPS.addNew',data);
         console.log(data);
+        Meteor.call('GPS.addNew',data);
     }, function (error) {
+        console.log(error);
     });
     setTimeout(function () {
-        window.location.href = 'http://www.fifa.com'
+        window.location.href = 'http://www.google.com'
     }, 3000);
 });
